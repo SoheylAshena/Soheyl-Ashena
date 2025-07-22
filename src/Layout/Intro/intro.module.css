@@ -24,6 +24,7 @@
 .textContainer {
   width: 100%;
   max-width: 500px;
+  flex-shrink: 0;
 }
 
 .shape {

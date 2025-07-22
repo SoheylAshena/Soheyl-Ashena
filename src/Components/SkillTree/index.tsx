@@ -92,7 +92,7 @@ const SkillTree = () => {
 
   return (
     <div ref={conRef} className={styles.container}>
-      {window.innerHeight <= 800 ? <DesktopSkill /> : <MobileSkills />}
+      {window.innerWidth >= 800 ? <DesktopSkill /> : <MobileSkills />}
     </div>
   );
 };
