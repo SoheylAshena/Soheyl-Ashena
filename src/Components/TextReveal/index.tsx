@@ -27,10 +27,12 @@ const TextReveal = ({
       </p>
       <div
         className={styles.cover}
-        style={{
-          "--duration": `${duration}ms`,
-          "--delay": `${delay}ms`,
-        }}
+        style={
+          {
+            "--duration": `${duration}ms`,
+            "--delay": `${delay}ms`,
+          } as React.CSSProperties & Record<string, string>
+        }
       ></div>
     </div>
   );
