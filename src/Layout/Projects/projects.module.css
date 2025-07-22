@@ -1,0 +1,12 @@
+.projects {
+  margin: var(--divide-dis);
+  display: flex;
+  flex-direction: column;
+  padding: 0 50px 0 250px;
+}
+
+@media screen and (max-width: 1100px) {
+  .projects {
+    padding: 20px;
+  }
+}

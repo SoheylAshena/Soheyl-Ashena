@@ -1,0 +1,20 @@
+.texture {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("@/Assets/Texture.jpg");
+  background-repeat: repeat;
+  background-size: 10%;
+  mix-blend-mode: hard-light;
+  filter: brightness(0.6) saturate(0);
+  pointer-events: none;
+  opacity: 50%;
+}
+
+@media screen and (max-width: 1100px) {
+  .texture {
+    background-size: 50%;
+  }
+}

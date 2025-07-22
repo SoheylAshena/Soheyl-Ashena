@@ -1,0 +1,20 @@
+.container {
+  text-align: center;
+  fill: var(--color-secondary);
+  width: 80%;
+}
+
+/* Skill nodes - animated "learned" */
+.learned {
+  fill: var(--color-primary);
+}
+
+@media screen and (max-width: 1100px) {
+  .container {
+    width: 100%;
+  }
+}
+
+.invisible {
+  opacity: 0;
+}

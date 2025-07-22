@@ -1,0 +1,46 @@
+.container {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.text {
+  margin: 0;
+  opacity: 0;
+  position: relative;
+}
+
+.textVisible {
+  opacity: 1;
+}
+
+.cover {
+  background-color: var(--color-primary);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+  z-index: 1;
+  animation: coverSlide var(--duration) forwards;
+  animation-delay: var(--delay);
+}
+
+@keyframes coverSlide {
+  0% {
+    width: 0%;
+    left: 0;
+  }
+  49% {
+    width: 100%;
+    left: 0;
+  }
+  50% {
+    width: 100%;
+    left: 0;
+  }
+  100% {
+    width: 0%;
+    left: 100%;
+  }
+}

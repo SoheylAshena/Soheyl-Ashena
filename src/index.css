@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Lovers+Quarrel&display=swap");
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-primary: #773800;
+  --color-secondary: #685644;
+  --color-bg: #ffd3ad;
+  --color-accent: #000000;
+
+  --divide-dis: 100px 0;
+
+  color: var(--color-primary);
+  fill: var(--color-primary);
+  stroke: var(--color-primary);
+  stroke-width: 0%;
+
+  font-family: "Lovers Quarrel";
+  background-color: #ffd3ad;
+  scroll-behavior: smooth;
+}
+
+#root {
+  position: relative;
+}
+
+.invisible {
+  fill: transparent;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}

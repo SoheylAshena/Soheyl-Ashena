@@ -1,0 +1,124 @@
+.contact {
+  margin: 100px 0 0;
+  overflow: hidden;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.form svg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.smallInput {
+  width: 100%;
+  max-width: 700px;
+  height: 80px;
+  padding: 20px 30px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.textArea {
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 30px;
+}
+
+.contact input,
+.contact textarea {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  outline: none;
+  border: 0;
+}
+
+.contact input::placeholder,
+.contact textarea::placeholder {
+  font-family: "Lovers Quarrel";
+  color: var(--color-primary);
+  font-size: 30px;
+}
+
+.submitCon {
+  width: 100%;
+  max-width: 800px;
+  height: 250px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: transparent;
+  color: var(--color-bg);
+  font-family: "Lovers Quarrel";
+  border: none;
+  outline: none;
+  font-size: 50px;
+}
+
+.success,
+.fail {
+  font-size: 45px;
+}
+
+.success {
+  color: green;
+}
+.fail {
+  color: red;
+}
+
+@media screen and (max-width: 1100px) {
+  .contact {
+    padding: 20px;
+  }
+
+  .smallInput {
+    padding: 10px 10px;
+    height: 50px;
+  }
+
+  .textArea {
+    padding: 10px 10px;
+    height: 150px;
+  }
+
+  .contact input::placeholder,
+  .contact textarea::placeholder {
+    font-family: "Lovers Quarrel";
+    color: var(--color-primary);
+    font-size: 20px;
+  }
+
+  .submitCon {
+    width: 100%;
+    max-width: 800px;
+    height: 200px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
