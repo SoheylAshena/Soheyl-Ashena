@@ -4,11 +4,6 @@
   width: 80%;
 }
 
-/* Skill nodes - animated "learned" */
-.learned {
-  fill: var(--color-primary);
-}
-
 @media screen and (max-width: 1100px) {
   .container {
     width: 100%;

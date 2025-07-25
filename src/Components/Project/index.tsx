@@ -3,8 +3,8 @@ import Frame from "@/Assets/vectors/Project Frame.svg?react";
 
 import { useRef } from "react";
 
-import VideoColorMaskOverlay from "../VideoMask";
-import vido from "@/Assets/videos/3.mp4";
+import VideoColorMaskOverlay from "../AlphaVideoMask";
+import vido from "@/Assets/videos/3.1.webm";
 
 interface ProjectProps {
   name: string;
@@ -19,11 +19,11 @@ const Project: React.FC<ProjectProps> = ({ name, title, desc, right }) => {
   return (
     <VideoColorMaskOverlay
       videoSrc={vido}
-      width={200}
-      height={200}
-      color="#ffd3ad"
+      width={10}
+      height={10}
+      color="#ffe3ca"
+      // color="#000000"
       inverted={true}
-      playbackRate={3}
     >
       <div
         ref={projRef}

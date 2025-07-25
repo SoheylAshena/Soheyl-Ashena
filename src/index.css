@@ -11,7 +11,7 @@
 :root {
   --color-primary: #773800;
   --color-secondary: #685644;
-  --color-bg: #ffd3ad;
+  --color-bg: #ffe3ca;
   --color-accent: #000000;
 
   --divide-dis: 100px 0;
@@ -22,7 +22,7 @@
   stroke-width: 0%;
 
   font-family: "Lovers Quarrel";
-  background-color: #ffd3ad;
+  background-color: var(--color-bg);
   scroll-behavior: smooth;
 }
 

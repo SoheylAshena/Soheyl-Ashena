@@ -34,9 +34,10 @@ const VideoColorMaskOverlay: React.FC<VideoColorMaskOverlayProps> = ({
   // Initialize canvas with solid color
   const initializeCanvas = useCallback(() => {
     const canvas = canvasRef.current!;
-    const ctx = canvas.getContext("2d")!;
     canvas.width = width; // Set canvas dimensions
     canvas.height = height;
+
+    const ctx = canvas.getContext("2d")!;
     ctx.fillStyle = color; // Fill with specified color
     ctx.fillRect(0, 0, width, height);
   }, [width, height, color]);
@@ -60,6 +61,7 @@ const VideoColorMaskOverlay: React.FC<VideoColorMaskOverlayProps> = ({
       maskCtx.drawImage(video, 0, 0, width, height);
       const frame = maskCtx.getImageData(0, 0, width, height);
       const data = frame.data;
+
       for (let i = 0; i < data.length; i += 4) {
         data[i + 3] = inverted ? 255 - data[i] : data[i]; // Use red channel as alpha
       }
@@ -147,7 +149,7 @@ const VideoColorMaskOverlay: React.FC<VideoColorMaskOverlayProps> = ({
           position: "absolute",
           width: "100%",
           height: "100%",
-          opacity: 0, // Hide video element
+          display: "none",
           top: 0,
           left: 0,
           pointerEvents: "none",
