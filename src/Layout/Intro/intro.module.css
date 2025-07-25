@@ -15,6 +15,10 @@
 .leaf {
   width: 100%;
   max-width: 300px;
+  fill: none;
+  stroke: var(--color-primary);
+  stroke-width: 0.4;
+  stroke-linecap: round;
 }
 
 .name {

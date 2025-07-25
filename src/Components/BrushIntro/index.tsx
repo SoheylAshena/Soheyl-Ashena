@@ -1,6 +1,10 @@
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import gsap from "gsap";
 import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
+import { useGSAP } from "@gsap/react";
+
+gsap.registerPlugin(DrawSVGPlugin);
+gsap.registerPlugin(useGSAP);
 
 interface BrushIntroProps {
   duration?: number;
@@ -15,21 +19,16 @@ const BrushIntro: React.FC<BrushIntroProps> = ({
 }) => {
   const shapeRef = useRef<SVGSVGElement | null>(null);
 
-  gsap.registerPlugin(DrawSVGPlugin);
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      if (shapeRef.current) {
-        gsap.from(shapeRef.current.querySelectorAll("path"), {
-          duration,
-          drawSVG: "0%",
-          ease: "power2.inOut",
-          immediateRender: false,
-        });
-      }
-    }, shapeRef);
-    return () => ctx.revert();
-  }, []);
+  useGSAP(
+    () => {
+      gsap.from("path", {
+        duration,
+        drawSVG: "0%",
+        ease: "power2.in",
+      });
+    },
+    { scope: shapeRef }
+  );
 
   return (
     <div>

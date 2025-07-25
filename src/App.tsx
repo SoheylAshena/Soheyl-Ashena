@@ -12,16 +12,22 @@ function App() {
   useEffect(() => {}, []);
   return (
     <>
-      <Texture />
       <Navbar />
       <Main />
+
       <Divider />
+
       <Projects />
+
       <Divider />
+
       <Skills />
       <About />
+
       <Divider />
+
       <Contact />
+
       <Texture />
     </>
   );

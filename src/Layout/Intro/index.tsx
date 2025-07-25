@@ -15,7 +15,7 @@ const Main = () => {
 
       {/* Image */}
       <div className={styles.leaf}>
-        <Leaf />
+        <BrushIntro className={styles.leaf} Shape={Leaf} duration={3} />
       </div>
     </Section>
   );
