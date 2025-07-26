@@ -18,15 +18,17 @@ const SkillTree = () => {
 
   useGSAP(
     () => {
-      const skills = learned.map((skill) => document.getElementById(skill.id));
+      const learnedSkills = learned.map((skill) =>
+        document.getElementById(skill.id)
+      );
 
-      gsap.to(skills, {
-        transformOrigin: "center",
+      gsap.to(learnedSkills, {
+        scrollTrigger: { trigger: conRef.current, start: "top center" },
         fill: "var(--color-primary)",
-        stagger: 0.3,
+        stagger: 0.2,
       });
     },
-    { scope: conRef.current! }
+    { scope: conRef }
   );
 
   return (

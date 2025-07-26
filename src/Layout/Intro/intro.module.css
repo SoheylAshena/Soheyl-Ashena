@@ -27,6 +27,7 @@
 
 .textContainer {
   width: 100%;
+  height: fit-content;
   max-width: 500px;
   flex-shrink: 0;
 }
@@ -38,5 +39,6 @@
 @media screen and (max-width: 1100px) {
   .intro {
     flex-direction: column;
+    gap: 0;
   }
 }

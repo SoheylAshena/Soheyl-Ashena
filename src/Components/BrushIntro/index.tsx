@@ -30,11 +30,7 @@ const BrushIntro: React.FC<BrushIntroProps> = ({
     { scope: shapeRef }
   );
 
-  return (
-    <div>
-      <Shape className={className} ref={shapeRef} />
-    </div>
-  );
+  return <Shape className={className} ref={shapeRef} />;
 };
 
 export default BrushIntro;
