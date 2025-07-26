@@ -4,25 +4,26 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-// Define props interface for type safety
 interface VideoAlphaMaskProps {
-  videoSrc: string; // URL of the video
-  width?: number; // Canvas width (default: 400)
-  height?: number; // Canvas height (default: 400)
-  color: string; // Color for the canvas background
-  inverted?: boolean; // Invert the video mask (default: false)
-  playbackRate?: number; // Video playback speed (default: 1)
-  children: React.ReactNode; // Child elements to render
+  videoSrc: string;
+  width?: number;
+  height?: number;
+  color: string;
+  inverted?: boolean;
+  playbackRate?: number;
+  children: React.ReactNode;
+  rotate?: number;
 }
 
 const VideoAlphaMask: React.FC<VideoAlphaMaskProps> = ({
   videoSrc,
-  width = 400,
+  width = 680,
   height = 400,
   color,
   inverted = false,
   playbackRate = 1,
   children,
+  rotate,
 }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -47,6 +48,10 @@ const VideoAlphaMask: React.FC<VideoAlphaMaskProps> = ({
     };
 
     const draw = () => {
+      if (video.paused || video.ended) {
+        return; // Exit animation loop
+      }
+
       ctx.globalCompositeOperation = inverted
         ? "destination-out"
         : "destination-in";
@@ -94,6 +99,7 @@ const VideoAlphaMask: React.FC<VideoAlphaMaskProps> = ({
           top: 0,
           left: 0,
           pointerEvents: "none",
+          transform: "rotate(" + rotate + "deg)",
         }}
       />
       <video

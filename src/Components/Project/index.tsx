@@ -11,19 +11,25 @@ interface ProjectProps {
   title: string;
   desc: string;
   right?: boolean;
+  rotate?: number;
 }
 
-const Project: React.FC<ProjectProps> = ({ name, title, desc, right }) => {
+const Project: React.FC<ProjectProps> = ({
+  name,
+  title,
+  desc,
+  right,
+  rotate,
+}) => {
   const projRef = useRef(null);
 
   return (
     <VideoColorMaskOverlay
       videoSrc={vido}
-      width={10}
-      height={10}
       color="#ffe3ca"
       // color="#000000"
       inverted={true}
+      rotate={rotate}
     >
       <div
         ref={projRef}

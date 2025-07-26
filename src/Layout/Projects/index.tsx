@@ -13,6 +13,7 @@ const Projects = () => {
             name={p.name}
             desc={p.desc}
             right={i % 2 !== 0}
+            rotate={i % 2 !== 0 ? 180 : 0}
           />
         </a>
       ))}
