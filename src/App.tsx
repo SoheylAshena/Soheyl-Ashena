@@ -6,10 +6,22 @@ import Contact from "./Layout/Contact";
 import Texture from "./Components/Texture";
 import Divider from "./Components/Divider";
 import About from "./Layout/About";
-import { useEffect } from "react";
+import Loading from "./Layout/Loading";
+import { useEffect, useState } from "react";
 
 function App() {
-  useEffect(() => {}, []);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    window.addEventListener("load", () => {
+      setLoading(false);
+    });
+  }, []);
+
+  if (loading) {
+    return <Loading />;
+  }
+
   return (
     <>
       <Navbar />
