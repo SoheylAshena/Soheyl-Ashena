@@ -48,3 +48,38 @@ export const learned = [
     desc: "Understanding of web accessibility principles and how to build inclusive user interfaces.",
   },
 ];
+
+export const notLearned = [
+  {
+    id: "ant",
+    desc: "",
+  },
+  {
+    id: "mui",
+    desc: "",
+  },
+  {
+    id: "pwa",
+    desc: "",
+  },
+  {
+    id: "vue",
+    desc: "",
+  },
+  {
+    id: "three",
+    desc: "",
+  },
+  {
+    id: "angular",
+    desc: "",
+  },
+  {
+    id: "lower",
+    desc: "",
+  },
+  {
+    id: "layer1",
+    desc: "",
+  },
+];

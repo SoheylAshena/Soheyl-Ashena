@@ -4,18 +4,32 @@ import BrushIntro from "@/Components/BrushIntro";
 import Leaf from "@/Assets/vectors/leaf.svg?react";
 import Texts from "@/Assets/vectors/Texts.svg?react";
 
-const Main = () => {
+interface MainProps {
+  loading: boolean;
+}
+
+const Main: React.FC<MainProps> = ({ loading }) => {
   return (
     <Section id="intro" className={styles.intro}>
       {/* Texts */}
       <div className={styles.textContainer}>
         <p className={styles.name}>Soheyl Ashena</p>
-        <BrushIntro className={styles.shape} Shape={Texts} duration={5} />
+        <BrushIntro
+          paused={loading}
+          className={styles.shape}
+          Shape={Texts}
+          duration={5}
+        />
       </div>
 
       {/* Image */}
       <div className={styles.leaf}>
-        <BrushIntro className={styles.leaf} Shape={Leaf} duration={3} />
+        <BrushIntro
+          paused={loading}
+          className={styles.leaf}
+          Shape={Leaf}
+          duration={3}
+        />
       </div>
     </Section>
   );

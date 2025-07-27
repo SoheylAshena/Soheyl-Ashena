@@ -2,7 +2,8 @@
   position: fixed;
   width: 100vw;
   height: 100vh;
-  background-color: #ffe3ca;
+  color: var(--color-bg);
+  background-color: var(--color-primary);
   top: 0;
   left: 0;
   z-index: 100;

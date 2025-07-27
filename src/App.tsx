@@ -13,19 +13,34 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    window.addEventListener("load", () => {
-      setLoading(false);
-    });
-  }, []);
+    document.body.style.overflow = "hidden";
 
-  if (loading) {
-    return <Loading />;
-  }
+    const handleLoad = () => {
+      setTimeout(() => {
+        setLoading(false);
+        document.body.style.overflow = "auto";
+      }, 1000);
+    };
+
+    // If the page is already loaded, call handler
+    if (document.readyState === "complete") {
+      setLoading(false);
+      document.body.style.overflow = "auto";
+    } else {
+      window.addEventListener("load", handleLoad);
+
+      return () => {
+        window.removeEventListener("load", handleLoad);
+      };
+    }
+  }, []);
 
   return (
     <>
+      <Loading finished={!loading} />
+
       <Navbar />
-      <Main />
+      <Main loading={loading} />
 
       <Divider />
 
