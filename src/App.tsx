@@ -8,6 +8,7 @@ import Divider from "./Components/Divider";
 import About from "./Layout/About";
 import Loading from "./Layout/Loading";
 import { useEffect, useState } from "react";
+import { Analytics } from "@vercel/analytics/react";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -56,6 +57,7 @@ function App() {
       <Contact />
 
       <Texture />
+      <Analytics />
     </>
   );
 }
