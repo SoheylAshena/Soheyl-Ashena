@@ -28,21 +28,19 @@ const SkillTree = () => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: conRef.current,
-          start: "top center",
+          start: "top 20%",
         },
       });
 
-      tl.fromTo(
-        learnedSkills,
-        { scaleY: 0, transformOrigin: "center" },
-        {
-          fill: "var(--color-primary)",
-          scaleY: 1,
-          stagger: 0.2,
-        }
-      ).from(notLearnedSkills, { opacity: 0 });
+      gsap.set(learnedSkills, { opacity: 0 });
+
+      tl.to(learnedSkills, {
+        fill: "var(--color-primary)",
+        opacity: 1,
+        stagger: 0.2,
+      }).from(notLearnedSkills, { opacity: 0 });
     },
-    { scope: conRef }
+    { scope: conRef, revertOnUpdate: true }
   );
 
   return (

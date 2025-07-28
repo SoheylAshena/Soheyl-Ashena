@@ -28,7 +28,7 @@ const useContact = () => {
       })
       .catch((error) => {
         setIsSending(false);
-        setError("Failed to send message. Please try again later.");
+        setError(`Failed to send message, Check your connection.`);
         console.error("Error sending email:", error.message);
       });
   };

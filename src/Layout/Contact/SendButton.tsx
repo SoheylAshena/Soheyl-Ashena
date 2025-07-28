@@ -9,7 +9,7 @@ interface SendButtonInterface {
 const SendButton = ({ isSending }: SendButtonInterface) => {
   return (
     <div className={styles.submitCon}>
-      <button type="submit" className={styles.button} disabled={isSending}>
+      <button type="submit" className={styles.button} disabled={true}>
         {isSending ? <span>Sending...</span> : "Send Message"}
       </button>
       <Button />

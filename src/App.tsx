@@ -9,9 +9,22 @@ import About from "./Layout/About";
 import Loading from "./Layout/Loading";
 import { useEffect, useState } from "react";
 import { Analytics } from "@vercel/analytics/react";
+import TheEnd from "./Components/TheEnd";
+import gsap from "gsap";
+import { ScrollSmoother } from "gsap/all";
+import { useGSAP } from "@gsap/react";
+
+gsap.registerPlugin(ScrollSmoother);
 
 function App() {
   const [loading, setLoading] = useState(true);
+
+  useGSAP(() => {
+    ScrollSmoother.create({
+      smooth: 1,
+      effects: true,
+    });
+  });
 
   useEffect(() => {
     document.body.style.overflow = "hidden";
@@ -39,23 +52,22 @@ function App() {
   return (
     <>
       <Loading finished={!loading} />
-
       <Navbar />
-      <Main loading={loading} />
-
-      <Divider />
-
-      <Projects />
-
-      <Divider />
-
-      <Skills />
-      <About />
-
-      <Divider />
-
-      <Contact />
-
+      <div id="smooth-wrapper">
+        <div id="smooth-content">
+          <div style={{ maxWidth: "1500px", margin: "0 auto" }}>
+            <Main loading={loading} />
+            <Divider />
+            <Projects />
+            <Divider />
+            <Skills />
+            <About />
+            <Divider />
+            <Contact />
+            <TheEnd />
+          </div>
+        </div>
+      </div>
       <Texture />
       <Analytics />
     </>

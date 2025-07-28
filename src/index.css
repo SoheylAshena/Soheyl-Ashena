@@ -13,6 +13,7 @@
   --color-secondary: #685644;
   --color-bg: #ffe3ca;
   --color-accent: #000000;
+  --color-accent-2: #502500;
 
   --divide-dis: 100px 0;
 
@@ -24,10 +25,6 @@
   font-family: "Lovers Quarrel";
   background-color: var(--color-bg);
   scroll-behavior: smooth;
-}
-
-#root {
-  position: relative;
 }
 
 .invisible {
