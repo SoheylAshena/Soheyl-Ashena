@@ -9,11 +9,12 @@
 }
 
 :root {
+  --color-bg: #ffe3ca;
   --color-primary: #773800;
   --color-secondary: #685644;
-  --color-bg: #ffe3ca;
   --color-accent: #000000;
   --color-accent-2: #502500;
+  --color-faded: #685644ab;
 
   --divide-dis: 100px 0;
 

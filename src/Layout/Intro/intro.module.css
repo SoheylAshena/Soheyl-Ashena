@@ -13,10 +13,10 @@
 }
 
 .leaf {
-  width: 100%;
+  width: 80%;
   fill: none;
   stroke: var(--color-primary);
-  stroke-width: 0.4;
+  stroke-width: 0.3;
   stroke-linecap: round;
 }
 
@@ -26,12 +26,7 @@
 
 .textContainer {
   width: 60%;
-  height: fit-content;
   flex-shrink: 0;
-}
-
-.shape {
-  width: 100%;
 }
 
 @media screen and (max-width: 1100px) {

@@ -1,6 +1,6 @@
 .container {
   text-align: center;
-  fill: var(--color-secondary);
+  fill: var(--color-faded);
   width: 80%;
 }
 

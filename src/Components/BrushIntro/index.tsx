@@ -1,10 +1,7 @@
 import { useRef } from "react";
-import gsap from "gsap";
-import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
-import { useGSAP } from "@gsap/react";
 
-gsap.registerPlugin(DrawSVGPlugin);
-gsap.registerPlugin(useGSAP);
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 interface BrushIntroProps {
   duration?: number;

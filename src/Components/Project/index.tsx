@@ -1,10 +1,11 @@
-import styles from "./project.module.css";
-import Frame from "@/Assets/vectors/Project Frame.svg?react";
-
 import { useRef } from "react";
 
 import VideoColorMaskOverlay from "../AlphaVideoMask";
+
+import Frame from "@/Assets/vectors/Project Frame.svg?react";
 import vido from "@/Assets/videos/3.1.webm";
+
+import styles from "./project.module.css";
 
 interface ProjectProps {
   name: string;

@@ -2,6 +2,7 @@ import styles from "./contact.module.css";
 
 import Input from "@/Assets/vectors/input.svg?react";
 import Area from "@/Assets/vectors/dd.svg?react";
+import { memo } from "react";
 
 const Inputs = () => {
   return (
@@ -34,4 +35,4 @@ const Inputs = () => {
   );
 };
 
-export default Inputs;
+export default memo(Inputs);

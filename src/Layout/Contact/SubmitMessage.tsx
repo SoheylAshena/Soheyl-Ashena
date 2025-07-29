@@ -1,4 +1,3 @@
-import { useEffect, useRef } from "react";
 import styles from "./contact.module.css";
 
 interface SubmitMessageInterface {
@@ -7,27 +6,13 @@ interface SubmitMessageInterface {
 }
 
 const SubmitMessage = ({ isSent, error }: SubmitMessageInterface) => {
-  const messageRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (messageRef.current) {
-      messageRef.current.scrollIntoView();
-    }
-  }, [isSent, error]);
-
   return (
-    <>
+    <div>
       {isSent && (
-        <div ref={messageRef} className={styles.success}>
-          Your message was sent successfully!
-        </div>
+        <p className={styles.success}>Your message was sent successfully!</p>
       )}
-      {error && (
-        <div ref={messageRef} className={styles.fail}>
-          {error}
-        </div>
-      )}
-    </>
+      {error && <p className={styles.fail}>{error}</p>}
+    </div>
   );
 };
 

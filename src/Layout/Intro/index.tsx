@@ -14,22 +14,12 @@ const Main: React.FC<MainProps> = ({ loading }) => {
       {/* Texts */}
       <div className={styles.textContainer}>
         <p className={styles.name}>Soheyl Ashena</p>
-        <BrushIntro
-          paused={loading}
-          className={styles.shape}
-          Shape={Texts}
-          duration={5}
-        />
+        <BrushIntro paused={loading} Shape={Texts} duration={5} />
       </div>
 
       {/* Image */}
       <div className={styles.leaf}>
-        <BrushIntro
-          paused={loading}
-          className={styles.leaf}
-          Shape={Leaf}
-          duration={3}
-        />
+        <BrushIntro paused={loading} Shape={Leaf} duration={3} />
       </div>
     </Section>
   );

@@ -1,16 +1,14 @@
 import { useRef } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
-
-gsap.registerPlugin(ScrollTrigger);
 
 import DesktopSkill from "@/Assets/vectors/Skill-Tree.svg?react";
 import MobileSkills from "@/Assets/vectors/mobile.svg?react";
 
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+
 import styles from "./skillTree.module.css";
 
-import { learned, notLearned } from "./learned";
+import { learned } from "./learned";
 
 const SkillTree = () => {
   const conRef = useRef<HTMLDivElement | null>(null);
@@ -21,10 +19,6 @@ const SkillTree = () => {
         .map((skill) => conRef.current!.querySelector(`#${skill.id}`))
         .filter(Boolean); // remove nulls
 
-      const notLearnedSkills = notLearned
-        .map((skill) => conRef.current!.querySelector(`#${skill.id}`))
-        .filter(Boolean);
-
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: conRef.current,
@@ -32,13 +26,11 @@ const SkillTree = () => {
         },
       });
 
-      gsap.set(learnedSkills, { opacity: 0 });
-
       tl.to(learnedSkills, {
         fill: "var(--color-primary)",
         opacity: 1,
         stagger: 0.2,
-      }).from(notLearnedSkills, { opacity: 0 });
+      });
     },
     { scope: conRef, revertOnUpdate: true }
   );

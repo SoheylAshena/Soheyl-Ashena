@@ -71,6 +71,11 @@
   fill: var(--color-accent-2);
 }
 
+.disabled,
+.disabled:hover {
+  fill: var(--color-secondary);
+}
+
 .button {
   width: 100%;
   height: 100%;
